@@ -1,0 +1,12 @@
+.inputProps{
+    margin-top: 6px;
+    width: 360px;
+    height: 44px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    padding: 10px 14px 10px  14px;
+    border: 1px solid #D0D5DD;
+}

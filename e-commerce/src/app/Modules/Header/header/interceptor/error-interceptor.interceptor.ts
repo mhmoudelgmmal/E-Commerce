@@ -12,14 +12,14 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class ErrorInterceptorInterceptor implements HttpInterceptor {
 
   constructor() {}
-  hasToken:boolean = JSON.parse(localStorage.getItem('ecommerceToken')!)
+  hasToken:string = JSON.parse(localStorage.getItem('ecommerceToken')!)
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let modifiedURL = request
     
     if (this.hasToken) {
       
       modifiedURL = request.clone({
-        headers:request.headers.set('Token','true')
+        headers:request.headers.set('Token',this.hasToken)
       })
     }
 

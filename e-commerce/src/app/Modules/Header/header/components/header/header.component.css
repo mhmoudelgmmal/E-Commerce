@@ -1,0 +1,38 @@
+.headerProps{
+    width: 100%;
+    height: 80px;
+   
+}
+.headerSlogan{
+    font-size: 16px;
+    line-height: 24px;
+}
+.footerSlogan{
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.logoSection{
+    width: 50%;
+    height: 100%;
+}
+.homeBTN{
+    width: 46px;
+}
+.LoginBTN{
+    width: 47px;
+}
+.dynamicComponentsProps{
+    border: 1px solid #667085;
+    height: calc(100vh - 208px);
+}
+.footerProps{
+   background-color: #1D2939;
+    width: 100%;
+    height: 128px;
+}
+.FooterText {
+    font-size: 16px;
+    line-height: 24px;
+    color: #98A2B3;
+}
