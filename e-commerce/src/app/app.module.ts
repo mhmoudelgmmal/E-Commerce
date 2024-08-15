@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptorInterceptor } from './Modules/Header/header/interceptor/error-interceptor.interceptor';
+import { LogoComponent } from './Shared/components/logo/logo.component';
+import { InputComponent } from './Shared/components/input/input.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

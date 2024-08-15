@@ -10,7 +10,10 @@ export class HeaderComponent implements OnInit {
   private http = inject(HttpClient)
 
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe((res)=>{
+    this.http.post('https://dummyjson.com/auth/login',{
+          username: 'emilys',
+          password: 'emilyspass',       
+    }).subscribe((res)=>{
       console.log(res);
       
     })

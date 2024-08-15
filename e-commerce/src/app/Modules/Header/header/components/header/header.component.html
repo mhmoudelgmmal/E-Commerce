@@ -1,2 +1,37 @@
-<p>header works!</p>
-<router-outlet></router-outlet>
+<header class="headerProps">
+    <div class="container">
+        <section class="logoSection w-50 dispLayFlexStart">
+            <div class="mr-10 "><app-logo></app-logo></div>
+            <h3 class="headerSlogan mr-40">ClickTik</h3>
+            <div class="homeBTN">
+                <button class="BTNNormal">Home</button>
+            </div>
+        </section>
+        <section class="dispLayFlexEnd w-50 ">
+            <div class="LoginBTN">
+                <button class="BTNNormal">Log in</button>
+            </div>
+
+        </section>
+    </div>
+</header>
+
+<div class="dynamicComponentsProps">
+
+    <router-outlet></router-outlet>
+</div>
+<footer class="footerProps">
+    <div class="container">
+        <section class="logoSection w-50 dispLayFlexStart">
+            <div class="mr-10 "><app-logo></app-logo></div>
+            <h3 class="footerSlogan mr-40">ClickTik</h3>
+           
+        </section>
+        <section class="dispLayFlexEnd w-50 ">
+            <div class="FooterText">
+                <p>© 2022 ClickTik</p>
+            </div>
+
+        </section>
+    </div>
+</footer>
