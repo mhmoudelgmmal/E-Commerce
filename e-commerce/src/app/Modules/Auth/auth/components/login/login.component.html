@@ -1,16 +1,47 @@
 <section class="container h-100">
-    <div class="bodyContainer h-100">
-
-        <div class="logo">
-           <div> <app-logo></app-logo></div>
-           <h1 class="LoginPageHeader">Log in to your account</h1>
-           <p class="loginPageText">Welcome back! Please enter your details.</p>
-            <div class="inputInParent"><app-input [type]="'text'" [text]="'Email'" [placeholder]="'Enter your email'"></app-input></div>
-            <div class="inputInParent"><app-input [type]="'password'" [text]="'password'" [placeholder]="'Enter your password'"></app-input></div>
-            <div>
-                <Button class="btnLogin">Sign In</Button>
-            </div>
+  <div class="bodyContainer h-100">
+    <div class="logo">
+      <div><app-logo></app-logo></div>
+      <h1 class="LoginPageHeader">Log in to your account</h1>
+      <p class="loginPageText">Welcome back! Please enter your details.</p>
+      <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <div class="inputInParent">
+          <app-input
+            (dataChanged)="onChildDataChange($event, 'username')"
+            (dataChangedOnBlur)="onBlurControl($event)"
+            [type]="'text'"
+            [text]="'User Name'"
+            [name]="'username'"
+            [placeholder]="'Enter your username'"
+          ></app-input>
+          <div
+            class="alert-danger"
+            *ngIf="loginForm.get('username')?.dirty && loginForm.get('username')?.invalid"            
+          >
+            <p *ngIf="
+              loginForm.get('username')?.hasError('required')">
+                You should enter valid username</p>
+          </div>
         </div>
-        
+        <div class="inputInParent">
+          <app-input
+            (dataChanged)="onChildDataChange($event, 'password')"
+            (dataChangedOnBlur)="onBlurControl($event)"
+            [name]="'password'"
+            [type]="'password'"
+            [text]="'password'"
+            [placeholder]="'Enter your password'"
+          ></app-input>
+          <div
+            class="alert-danger"
+            *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.invalid">
+            <p *ngIf="loginForm.get('password')?.hasError('required')">You should enter the password</p>
+          </div>
+        </div>
+        <div>
+          <Button class="btnLogin" [disabled]="loginForm.status == 'INVALID'" type="submit">Sign In</Button>
+        </div>
+      </form>
     </div>
+  </div>
 </section>

@@ -6,11 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  hasToken:boolean = JSON.parse(localStorage.getItem('ecommerceToken')!)
+  hasToken = ""
   private router = inject(Router)
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      this.hasToken = localStorage.getItem('ecommerceToken')!
+
       const routerState = state.url
       if (this.hasToken) {
         if (routerState.includes('/login')) {
