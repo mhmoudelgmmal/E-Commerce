@@ -1,3 +1,6 @@
+export interface LoginDataResponse {
+    auth : LoginData
+}
 export interface LoginData {
     id:           number;
     username:     string;

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  hasToken = ""
+  hasToken:string = ""
   private router = inject(Router)
   canActivate(
     route: ActivatedRouteSnapshot,

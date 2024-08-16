@@ -36,3 +36,25 @@
     line-height: 24px;
     color: #98A2B3;
 }
+.imgCartProps{
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+}
+.counter{
+    width: 14px;
+    height: 14px;
+    background-color: #41CCCC;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 8px;
+    border: 2px solid #FFFFFF;
+    color: #344054;
+    font-size: 10px;
+    text-align: center;
+}

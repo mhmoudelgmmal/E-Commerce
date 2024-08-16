@@ -1,37 +1,54 @@
 <header class="headerProps">
-    <div class="container">
-        <section class="logoSection w-50 dispLayFlexStart">
-            <div class="mr-10 "><app-logo></app-logo></div>
-            <h3 class="headerSlogan mr-40">ClickTik</h3>
-            <div class="homeBTN">
-                <button class="BTNNormal">Home</button>
+  <div class="container">
+    <section class="logoSection w-50 dispLayFlexStart">
+      <div class="mr-10"><app-logo></app-logo></div>
+      <h3 class="headerSlogan mr-40">ClickTik</h3>
+      <div class="homeBTN">
+        <button class="BTNNormal">Home</button>
+      </div>
+    </section>
+    <section class="dispLayFlexEnd w-50" *ngIf="!(loginToken$ | async)">
+      <div class="LoginBTN">
+        <button class="BTNNormal">Log in</button>
+      </div>
+    </section>
+    <section class="dispLayFlexEnd w-50 position-relative" *ngIf="loginToken$ | async">
+        <div class="">
+            <!-- (dataChanged)="onChildDataChange($event, 'username')"-->
+            <app-search-input
+            [type]="'text'"
+            [text]="'Search'"
+            [name]="'search'"
+            [placeholder]="'Search'"
+            ></app-search-input>
+            
+        </div>
+        <div class="imgCartProps position-relative">
+            <div class="counter">
+                {{counter}}
             </div>
-        </section>
-        <section class="dispLayFlexEnd w-50 ">
-            <div class="LoginBTN">
-                <button class="BTNNormal">Log in</button>
-            </div>
-
-        </section>
-    </div>
+            <img src="../../../../../../assets/Cart.png" alt="">
+        </div>
+        <div >
+          <button class="BTNNormal">Account</button>
+        </div>
+    </section>
+  </div>
 </header>
 
 <div class="dynamicComponentsProps">
-
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 <footer class="footerProps">
-    <div class="container">
-        <section class="logoSection w-50 dispLayFlexStart">
-            <div class="mr-10 "><app-logo></app-logo></div>
-            <h3 class="footerSlogan mr-40">ClickTik</h3>
-           
-        </section>
-        <section class="dispLayFlexEnd w-50 ">
-            <div class="FooterText">
-                <p>© 2022 ClickTik</p>
-            </div>
-
-        </section>
-    </div>
+  <div class="container">
+    <section class="logoSection w-50 dispLayFlexStart">
+      <div class="mr-10"><app-logo></app-logo></div>
+      <h3 class="footerSlogan mr-40">ClickTik</h3>
+    </section>
+    <section class="dispLayFlexEnd w-50">
+      <div class="FooterText">
+        <p>© 2022 ClickTik</p>
+      </div>
+    </section>
+  </div>
 </footer>

@@ -23,6 +23,11 @@
     justify-content: start;
     align-items: center;
 }
+.dispLayFlexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .dispLayFlexEnd{
     display: flex;
     justify-content: end;
@@ -37,6 +42,9 @@
 .LogoProps{
     width: 32px;
     height: 32px;
+}
+.position-relative{
+    position: relative;
 }
 
 .BTNNormal{

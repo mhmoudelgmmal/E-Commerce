@@ -3,7 +3,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
-import { LoginData } from '../../contexts/DTOS';
+import { LoginData, LoginDataResponse } from '../../contexts/DTOS';
+import { Store } from '@ngxs/store';
+import { loginUser } from '../../store/actions/login.actions';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { LoginData } from '../../contexts/DTOS';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private store:Store) {}
   private http = inject(HttpClient);
   private Router = inject(Router)
   private loginService = inject(LoginService)
@@ -30,8 +32,10 @@ export class LoginComponent implements OnInit {
 
   submitForm() {
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value).subscribe((res:LoginData)=>{
-        localStorage.setItem('ecommerceToken',res.token)
+      this.store.dispatch(new loginUser(this.loginForm.value)).subscribe((res:LoginDataResponse)=>{
+      // this.loginService.login(this.loginForm.value)
+      
+        localStorage.setItem('ecommerceToken',res.auth.token)
         this.Router.navigate(['/products'])
       })
     }
