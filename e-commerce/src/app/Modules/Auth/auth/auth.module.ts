@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { LogoComponent } from "../../../Shared/components/logo/logo.component";
 import { InputComponent } from 'src/app/Shared/components/input/input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { InputComponent } from 'src/app/Shared/components/input/input.component'
     CommonModule,
     AuthRoutingModule,
     LogoComponent,
-    InputComponent
+    InputComponent,
+    ReactiveFormsModule
 ]
 })
 export class AuthModule { }

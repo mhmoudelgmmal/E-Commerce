@@ -1,4 +1,11 @@
 <div>
-    <label [for]="text">{{text}}</label>
+  <label [for]="text">{{ text }}</label>
 </div>
-<input class="inputProps" [type]="type" [placeholder]="placeholder">
+<input
+  class="inputProps"
+  [type]="type"
+  [placeholder]="placeholder"
+  (blur)="onBlur()"
+  (input)="onInputChange($event)"
+  [value]="data"
+/>

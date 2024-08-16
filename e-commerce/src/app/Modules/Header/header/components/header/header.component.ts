@@ -7,15 +7,8 @@ import { Component, inject, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private http = inject(HttpClient)
 
   ngOnInit(): void {
-    this.http.post('https://dummyjson.com/auth/login',{
-          username: 'emilys',
-          password: 'emilyspass',       
-    }).subscribe((res)=>{
-      console.log(res);
-      
-    })
+    
   }
 }
