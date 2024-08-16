@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ErrorInterceptorInterceptor } from './Modules/Header/header/interceptor/error-interceptor.interceptor';
+import { ErrorInterceptorInterceptor } from './interceptor/error-interceptor.interceptor';
 import { LogoComponent } from './Shared/components/logo/logo.component';
 import { InputComponent } from './Shared/components/input/input.component';
+import { NgxsModule } from '@ngxs/store';
+import { LoginState } from './Modules/Auth/auth/store/state/login.state';
+import { SearchInputComponent } from './Shared/components/search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { InputComponent } from './Shared/components/input/input.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxsModule.forRoot([LoginState])
   ],
   providers:[
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorInterceptor,multi:true}
