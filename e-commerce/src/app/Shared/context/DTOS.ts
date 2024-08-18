@@ -1,8 +1,8 @@
 export interface Path {
     name:string;
 }
-export interface productsList {
+export interface categoriesList {
     name:string;
-    count:number;
+    slug:string
     checked:boolean
 }

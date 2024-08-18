@@ -13,6 +13,8 @@ import { SearchInputComponent } from './Shared/components/search-input/search-in
 import { PathsComponent } from './Shared/components/paths/paths.component';
 import { PaginationComponent } from './Shared/components/pagination/pagination.component';
 import { LoadingComponent } from './Shared/components/loading/loading.component';
+import { ProductsState } from './Modules/Products/products/components/products/store/state/products.state';
+import { SeemorePipe } from './Shared/pipes/seeMore/seemore.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { LoadingComponent } from './Shared/components/loading/loading.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([LoginState])
+    NgxsModule.forRoot([LoginState,ProductsState])
   ],
   providers:[
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorInterceptor,multi:true}
