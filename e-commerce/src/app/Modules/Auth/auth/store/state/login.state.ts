@@ -17,7 +17,8 @@ import { HttpErrorResponse } from '@angular/common/http';
         gender:       "",
         image:        "",
         token:        "",
-        refreshToken: ""
+        refreshToken: "",
+        isLoading:false
     }
 })
 @Injectable()
@@ -25,6 +26,10 @@ export class LoginState {
     @Selector()
     static loginToken(state:LoginData){
         return state.token;
+    }
+    @Selector()
+    static isLoading(state:LoginData){
+        return state.isLoading;
     }
     private loginService = inject(LoginService)
 
@@ -39,7 +44,8 @@ export class LoginState {
             gender:       "",
             image:        "",
             token:        "",
-            refreshToken: ""
+            refreshToken: "",
+            isLoading:true
         });
 
         return this.loginService.login(payload).pipe(
@@ -54,7 +60,8 @@ export class LoginState {
                     gender:       res.gender,
                     image:        res.image,
                     token:        res.token,
-                    refreshToken: res.refreshToken
+                    refreshToken: res.refreshToken,
+                    isLoading:false
                 })
             }),
             catchError((err:HttpErrorResponse)=>{
@@ -67,7 +74,8 @@ export class LoginState {
                     gender:       "",
                     image:        "",
                     token:        "",
-                    refreshToken: ""
+                    refreshToken: "",
+                    isLoading:false
                 })
                 return throwError(()=>err)
             })
