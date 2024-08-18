@@ -1,0 +1,15 @@
+<section class="pagination">
+    <div class="arrowLeft">
+        <img #arrowActiveLeft  (click)="increaseAndDecreasePagesNumber('decrease')"  class="arrowActiveLeft" src="../../../../assets/active.png" alt="">
+        <img #arrowInactiveLeft src="../../../../assets/Inactive.png" alt="">
+    </div>
+    <div class="number" #firstNumber #activeButtons (click)="selectPageAndSetFilteration(firstNumber)"></div>
+    <div class="number"#secondNumber #activeButtons (click)="selectPageAndSetFilteration(secondNumber)"></div>
+    <div class="dotts" #dotts (click)="increaseAndDecreasePagesNumber('increase')">...</div>
+    <div class="number" #thirdNumber #activeButtons (click)="selectPageAndSetFilteration(thirdNumber)"></div>
+    <div class="number" #fourthNumber #activeButtons (click)="selectPageAndSetFilteration(fourthNumber)"></div>
+    <div class="arrowRight">        
+        <img (click)="increaseAndDecreasePagesNumber('increase')" #arrowActiveRight src="../../../../assets/active.png" alt="">
+        <img #arrowInactiveRight class="arrowRightInactive" src="../../../../assets/Inactive.png" alt="">
+    </div>
+</section>

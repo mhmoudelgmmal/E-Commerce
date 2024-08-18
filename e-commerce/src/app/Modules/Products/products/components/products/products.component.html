@@ -1,1 +1,187 @@
-<h1 class="headerProducts">iPhone</h1>
+<div class="container h-300 d-block">
+    <div class="ProductHead w-100">
+        <h1 class="headerProducts">{{product}}</h1>
+        <section class="paths">
+            <app-paths
+            [pathes]="pathes"
+            ></app-paths>
+        </section>
+        
+    </div>
+</div>
+<section class="container m-104">
+    <section class="d-flex justify-content-between w-100 ">
+        <!-- start products Box -->
+        <section class="productsCategory">
+            <div class="categoriesBox">
+                <div class="m-12">
+                    <h6 class="categoriesBoxHeader">Products</h6>
+                    <div class="dispLayFlexstart flex-column">
+                        <!-- start dynamic products loop -->
+                        <form [formGroup]="productsForm">
+
+                           <div formArrayName="productsArray">
+                                <ng-container *ngFor="let product of getProductsArrayToLoopInHTML().controls; let i = index">                        
+                                    <label class="container-radio " [formGroupName]="i">
+                                        <span class="RadioTextProps">{{product.value.name + " ( "  + product.value.count + " ) "}}</span>
+                                        <input type="radio" name="checked" formControlName="checked" (change)="setFormControlCheckedValue(i)" [value]="true">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+                           </div>  
+                        </form>                                                
+                        <!-- end dynamic products loop -->
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+        <!-- end products Box -->
+         <!-- start Cards Section -->
+         <div class="d-flex flex-wrap">
+             <div class="d-flex flex-wrap">
+                 <section class="singleProduct">
+                     <div class="card">
+                       <div class="position-relative"> 
+                        <label class="discount" for="discount">
+                            - 12.96%
+                        </label>
+                        <img class="cardImg" src="../../../../../../assets/image 4.png" alt="">
+                    </div>
+                    <h3 class="cardHeader">Iphone</h3>
+                    <p class="cardDetailsText">An Apple mobile which is nothing like apple.</p>
+                    <span class="oldPrice">549  <span class="currency">USD</span></span>
+                    <span class="newPrice">477.85 <span class="currency">USD</span></span>
+                    <div class="firstSubcategories">
+                        <span class="subcategoriesText">Brand:</span>
+                        <span class="subcategoriesName"> Apple</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">Category:</span>
+                        <span class="subcategoriesName"> Smartphones</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">In stock:</span>
+                        <span class="subcategoriesName"> 94</span>
+                    </div>
+                    <div class="dispLayFlexEnd">
+                        <img src="../../../../../../assets/Star.png" alt="">
+                        <span class="numberOfStars">4.69</span>
+                        <span class="reateNumber">(11)</span>
+                    </div>
+                    <div class="text-center ">
+                        <button class="AddButton">ADD TO CART</button>
+                    </div>
+                     </div>
+                </section>
+                 <section class="singleProduct">
+                     <div class="card">
+                       <div class="position-relative"> 
+                        <label class="discount" for="discount">
+                            - 12.96%
+                        </label>
+                        <img class="cardImg" src="../../../../../../assets/image 4.png" alt="">
+                    </div>
+                    <h3 class="cardHeader">Iphone</h3>
+                    <p class="cardDetailsText">An Apple mobile which is nothing like apple.</p>
+                    <span class="oldPrice">549  <span class="currency">USD</span></span>
+                    <span class="newPrice">477.85 <span class="currency">USD</span></span>
+                    <div class="firstSubcategories">
+                        <span class="subcategoriesText">Brand:</span>
+                        <span class="subcategoriesName"> Apple</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">Category:</span>
+                        <span class="subcategoriesName"> Smartphones</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">In stock:</span>
+                        <span class="subcategoriesName"> 94</span>
+                    </div>
+                    <div class="dispLayFlexEnd">
+                        <img src="../../../../../../assets/Star.png" alt="">
+                        <span class="numberOfStars">4.69</span>
+                        <span class="reateNumber">(11)</span>
+                    </div>
+                    <div class="text-center ">
+                        <button class="AddButton">ADD TO CART</button>
+                    </div>
+                     </div>
+                </section>
+                 <section class="singleProduct">
+                     <div class="card">
+                       <div class="position-relative"> 
+                        <label class="discount" for="discount">
+                            - 12.96%
+                        </label>
+                        <img class="cardImg" src="../../../../../../assets/image 4.png" alt="">
+                    </div>
+                    <h3 class="cardHeader">Iphone</h3>
+                    <p class="cardDetailsText">An Apple mobile which is nothing like apple.</p>
+                    <span class="oldPrice">549  <span class="currency">USD</span></span>
+                    <span class="newPrice">477.85 <span class="currency">USD</span></span>
+                    <div class="firstSubcategories">
+                        <span class="subcategoriesText">Brand:</span>
+                        <span class="subcategoriesName"> Apple</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">Category:</span>
+                        <span class="subcategoriesName"> Smartphones</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">In stock:</span>
+                        <span class="subcategoriesName"> 94</span>
+                    </div>
+                    <div class="dispLayFlexEnd">
+                        <img src="../../../../../../assets/Star.png" alt="">
+                        <span class="numberOfStars">4.69</span>
+                        <span class="reateNumber">(11)</span>
+                    </div>
+                    <div class="text-center ">
+                        <button class="AddButton">ADD TO CART</button>
+                    </div>
+                     </div>
+                </section>
+                 <section class="singleProduct">
+                     <div class="card">
+                       <div class="position-relative"> 
+                        <label class="discount" for="discount">
+                            - 12.96%
+                        </label>
+                        <img class="cardImg" src="../../../../../../assets/image 4.png" alt="">
+                    </div>
+                    <h3 class="cardHeader">Iphone</h3>
+                    <p class="cardDetailsText">An Apple mobile which is nothing like apple.</p>
+                    <span class="oldPrice">549  <span class="currency">USD</span></span>
+                    <span class="newPrice">477.85 <span class="currency">USD</span></span>
+                    <div class="firstSubcategories">
+                        <span class="subcategoriesText">Brand:</span>
+                        <span class="subcategoriesName"> Apple</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">Category:</span>
+                        <span class="subcategoriesName"> Smartphones</span>
+                    </div>
+                    <div class="subcategories">
+                        <span class="subcategoriesText">In stock:</span>
+                        <span class="subcategoriesName"> 94</span>
+                    </div>
+                    <div class="dispLayFlexEnd">
+                        <img src="../../../../../../assets/Star.png" alt="">
+                        <span class="numberOfStars">4.69</span>
+                        <span class="reateNumber">(11)</span>
+                    </div>
+                    <div class="text-center ">
+                        <button class="AddButton">ADD TO CART</button>
+                    </div>
+                     </div>
+                </section>
+             </div>
+             <div class="w-100 dispLayFlexCenter paginationInparentProps">
+                 <app-pagination></app-pagination>
+             </div>
+        </div>
+        <!-- end Cards Section -->
+    
+    </section>
+</section>

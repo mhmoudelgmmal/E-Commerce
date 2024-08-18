@@ -25,6 +25,7 @@
 .dynamicComponentsProps{
     border: 1px solid #667085;
     height: calc(100vh - 208px);
+    overflow: auto;
 }
 .footerProps{
    background-color: #1D2939;
