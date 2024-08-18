@@ -7,7 +7,7 @@
     left: 10px;
     width: 17.05px;
     height: 17.06px;
-
+    z-index: 99999;
 }
 .inputProps{
     width: 319px;
@@ -25,4 +25,7 @@
     position: relative;
     min-width: 319px;
     margin-right: 24px;
+}
+.searchImg{
+    cursor: pointer;
 }

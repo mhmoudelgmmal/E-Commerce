@@ -3,6 +3,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnInit,
   Output,
@@ -29,11 +30,13 @@ interface pagesDataVisible {
   standalone: true,
 })
 export class PaginationComponent implements OnInit, AfterViewInit {
-  @Input() totalItems: number = 194;
+  @Input() totalItems!: number ;
   limit: number = 10;
   currentPage: number = 1;
   pagesNumber!: number;
-  @Output() filterPage!: number;
+  page!: number;
+  @Output() skip = new EventEmitter<number>();
+
   @ViewChild('firstNumber') firstNumber!: ElementRef<HTMLElement>;
   @ViewChild('secondNumber') secondNumber!: ElementRef<HTMLElement>;
   @ViewChild('dotts') dotts!: ElementRef<HTMLElement>;
@@ -44,6 +47,7 @@ export class PaginationComponent implements OnInit, AfterViewInit {
   @ViewChild('arrowActiveRight') arrowActiveRight!: ElementRef<HTMLElement>;
   @ViewChild('arrowInactiveRight') arrowInactiveRight!: ElementRef<HTMLElement>;
   @ViewChildren('activeButtons') activeButtons!: QueryList<ElementRef<HTMLDivElement>>
+
   increaseAndDecreasePagesNumber(type:string) {    
     this.activeButtons.forEach((element)=>element.nativeElement.classList.remove('active'))
 
@@ -119,7 +123,7 @@ export class PaginationComponent implements OnInit, AfterViewInit {
     } 
     
     if (type == 'decrease' && this.firstNumber.nativeElement.innerHTML == "1") {
-      debugger
+      
       this.setDisplayedArrowAndHiddenArrows(
         [
         { name: this.arrowActiveLeft },
@@ -382,7 +386,7 @@ export class PaginationComponent implements OnInit, AfterViewInit {
     }
   }
   initPaginationpagesNumber() {
-    
+
     this.pagesNumber = Math.ceil(this.totalItems / this.limit);
     
 
@@ -497,8 +501,11 @@ export class PaginationComponent implements OnInit, AfterViewInit {
       );
       return;
     }
+
   }
-  selectPageAndSetFilteration(event: HTMLDivElement) {
+
+    selectPageAndSetFilteration(event: HTMLDivElement) {
+        this.page = Number(event.innerHTML) ;
         this.activeButtons.forEach((element)=>element.nativeElement.classList.remove('active'))
         event.classList.add('active')
     if (Number(this.firstNumber.nativeElement.innerHTML) > 1) {
@@ -513,6 +520,7 @@ export class PaginationComponent implements OnInit, AfterViewInit {
       ],
     );
     }
+    this.skip.emit(Number(event.innerHTML))
   }
   ngOnInit(): void {}
   ngAfterViewInit(): void {

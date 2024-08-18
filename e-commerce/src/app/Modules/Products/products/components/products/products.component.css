@@ -9,7 +9,7 @@
 }
 .categoriesBox{
     width: 282px;
-    height: 588px;
+    height: 650px;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -108,6 +108,9 @@
   }
   /* radio button properties */
   /* Start Cards Section */
+  .searchDetail{
+    margin: 0 8px;
+  }
   .allCards{
     width: calc(75% -282px);
   }
@@ -139,7 +142,7 @@
 }
 .cardImg{
     width: 282px;
-    height: 257px;
+  height: 245px;
 
 }
 .cardHeader{
@@ -155,6 +158,17 @@
     line-height: 16.94px;
     color: #344054;
     margin: 16px 8px;
+    height: 18px;
+    padding: 0;
+    
+}
+.cardDetailsTextContainer{
+  overflow: hidden;
+    position: relative;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
 }
 .oldPrice{
     text-decoration: line-through;
