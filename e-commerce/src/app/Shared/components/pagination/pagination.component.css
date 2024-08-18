@@ -1,0 +1,43 @@
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 296px;
+    height: 32px;
+    text-align: center;
+}
+.number,.dotts,.arrowLeft,.arrowRight {
+    text-align: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+}
+.number,.dotts{
+    padding-top: 5px;
+    border: 0.5px solid #F6F6F6;
+}
+.number:active,.dotts:active,.arrowLeft:active,.arrowRight:active {
+    background-color: #41CCCC;    
+}
+.arrowActiveLeft{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.arrowRightInactive{
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+.active{
+    background-color: #41CCCC;
+}

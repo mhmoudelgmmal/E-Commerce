@@ -7,6 +7,9 @@
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
+.d-block{
+    display: block;
+}
 .container{
     width: 75%;
     margin: auto;
@@ -63,6 +66,12 @@
 .w-50{
     width: 50% !important;
 }
+.w-25{
+    width: 25% !important;
+}
+.w-75{
+    width: 75% !important;
+}
 .h-100{
     height: 100% !important;
 }
@@ -78,4 +87,25 @@
     border: 1px solid transparent;
     border-radius: .25rem;
     margin-top: 5px;
+}
+.d-flex{
+    display: flex;
+}
+.m-12{
+    margin: 12px !important;
+}
+.flex-column{
+    flex-direction: column;
+}
+.text-center{
+    text-align: center;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.d-none{
+    display: none !important;
+}
+.justify-content-between{
+    justify-content: space-between !important;
 }
