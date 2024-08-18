@@ -8,6 +8,7 @@ import { InputComponent } from 'src/app/Shared/components/input/input.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxsModule } from '@ngxs/store';
 import { LoginState } from './store/state/login.state';
+import { LoadingComponent } from "../../../Shared/components/loading/loading.component";
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { LoginState } from './store/state/login.state';
     LogoComponent,
     InputComponent,
     ReactiveFormsModule,
-    
+    LoadingComponent
 ],
 })
 export class AuthModule { }

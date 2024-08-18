@@ -4,8 +4,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { LoginData, LoginDataResponse } from '../../contexts/DTOS';
-import { Store } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
 import { loginUser } from '../../store/actions/login.actions';
+import { LoginState } from '../../store/state/login.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +16,8 @@ import { loginUser } from '../../store/actions/login.actions';
 })
 export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,private store:Store) {}
-  private http = inject(HttpClient);
   private Router = inject(Router)
-  private loginService = inject(LoginService)
+  @Select(LoginState.isLoading) isLoading$!:Observable<boolean>
   loginForm: FormGroup = this.fb.group({
     username: ["",{ validators: [Validators.required], updateOn: "blur" }],
     password: ["",{ validators: [Validators.required], updateOn: "blur" }],

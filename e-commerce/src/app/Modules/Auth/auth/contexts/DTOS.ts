@@ -11,4 +11,5 @@ export interface LoginData {
     image:        string;
     token:        string;
     refreshToken: string;
+    isLoading:boolean
 }
